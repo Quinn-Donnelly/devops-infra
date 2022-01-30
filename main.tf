@@ -132,6 +132,10 @@ resource "aws_iam_role" "codebuild_role" {
       },
     ]
   })
+
+  tags = {
+    project: var.repo-name
+  }
 }
 
 resource "aws_codebuild_project" "example" {
@@ -174,7 +178,7 @@ resource "aws_codebuild_project" "example" {
   }
 
   tags = {
-    project = "devops-test"
+    project = var.repo-name
   }
 }
 
