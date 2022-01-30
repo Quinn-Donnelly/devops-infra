@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Pre Build phase
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the things
+      - echo $CODEBUILD_WEBHOOK_EVENT
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Not doing anything
